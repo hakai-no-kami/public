@@ -1,0 +1,11 @@
+(define (my-sort ls) (f ls (list)))
+(define (f ls sls)
+    (if (null? ls)
+        sls
+        (f (cdr ls) (my-insert (list) sls (car ls)))))
+(define (my-insert a b x)
+    (if (null? b)
+        (append a (list x))
+        (if (string<? x (car b))
+             (append a (list x) b)
+             (my-insert (append a (list (car b))) (cdr b) x))))
